@@ -74,9 +74,9 @@
           </td>
         </tr>
 
-        <tr>
+        <tr class="">
           <td colspan="2">
-            <input class="btn btn-primary" type="submit" name="add" value="Add">
+            <input class="btn btn-primary d-flex justify-content-center m-auto" type="submit" name="add" value="Add">
           </td>
         </tr>
       </table>

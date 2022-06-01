@@ -57,6 +57,7 @@ $voyages = Voyage::getAll();
           <th>Number of places</th>
           <th>Price</th>
           <th>Train</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -69,6 +70,12 @@ $voyages = Voyage::getAll();
             <td><?php echo $row['nb_place'] ?></td>
             <td><?php echo $row['prix'] ?></td>
             <td><?php echo $row['idTrain'] ?></td>
+            <td>
+              <form method="POST" action="../Controllers/Voyage.php">
+                <input type="text" name="id" value="<?php echo $row['id'] ?>" hidden>
+                <input type="submit" name="delete" class="btn btn-danger" value="Supprimer">
+              </form>
+            </td>
           </tr>
         <?php } ?>
       </tbody>

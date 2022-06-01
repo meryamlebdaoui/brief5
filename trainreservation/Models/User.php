@@ -5,7 +5,7 @@ require_once "Client.php";
 require_once "Admin.php";
 
 class User{
-    private $table = "User";
+    private $table = "user";
     public $id;
     public $first_name;
     public $last_name;

@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="Views/assets/css/owl.carousel.css">
 	<link rel="stylesheet" href="Views/assets/css/owl.theme.css">
 	<link rel="stylesheet" href="Views/assets/css/flexslider.css" type="text/css">
-	<link rel="stylesheet" href="Views/assets/css/main.css?<?php echo time(); ?>">
+	<link rel="stylesheet" href="Views/assets/css/main.css?">
 	<link rel="stylesheet" href="Views/assets/css/contact.css">
 
 	<style type="text/css">
@@ -308,7 +308,7 @@
 					<label for="exampleFormControlTextarea1">Enter your message</label>
 					<textarea class="form-control" name="message" placeholder="Message" id="exampleFormControlTextarea1" rows="4"></textarea>
 				</div>
-				<button type="submit" class="btn btn-primary">Send</button>
+				<button type="submit" class="btn btn-primary d-flex justify-content-center m-auto">Send</button>
 			</form>
 		</div>
 

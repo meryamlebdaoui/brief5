@@ -13,6 +13,8 @@ if(isset($_POST['login'])){
         $_SESSION['user'] = serialize($result);
         $_SESSION['type'] = get_class($result);
         header('Location: ../Views/profile.php');
+    }else{
+        header('Location: ../index.php');
     }
 }
 else if(isset($_POST['register'])){

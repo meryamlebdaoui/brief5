@@ -111,8 +111,15 @@ switch ($_SESSION['type']) {
             <td><?php echo $voyage->ville_arrive . " " . $voyage->date_arrive; ?></td>
             <td><?php echo ($row['prix'] / $voyage->prix); ?></td>
             <td><?php echo $row['prix']; ?></td>
+            
             <td>
-              <?php
+            <?php
+              $timestamp2 = strtotime(date('Y-m-d h:i:s'));
+              $timestamp1 = strtotime(date($voyage->date_depart));
+              //echo $timestamp1 - $timestamp2;
+              $nb = ($timestamp1 - $timestamp2)/(60*60);
+              //echo $nb;
+              if($nb>1){
               switch ($row['etat']) {
                 case 0:
                   echo "<button type=\"button\" class=\"btn btn-success\" onclick=\"change(1," . $row['id'] . ")\">Activate</button>";
@@ -121,6 +128,8 @@ switch ($_SESSION['type']) {
                   echo "<button type=\"button\" class=\"btn btn-danger\" onclick=\"change(0," . $row['id'] . ")\">Cancel</button>";
                   break;
               }
+            }else
+            echo "You can't cancel the tour";
               ?>
             </td>
           </tr>

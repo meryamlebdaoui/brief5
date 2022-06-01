@@ -50,6 +50,11 @@ class Voyage{
         return new Voyage($id, $result['ville_depart'], $result['ville_arrive'], $result['date_depart'], $result['date_arrive'], $result['nb_place'], $result['prix'], $result['idTrain']);
     }
 
+    public static function delete($id){
+        $ctn=new Connection();
+        $ctn->delete("Voyage", $id);
+    }
+
     public static function demenuer($nb, $id){
         $ctn=new Connection();
         $conn = $ctn->getConnection();

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2022 at 08:43 PM
+-- Generation Time: May 17, 2022 at 01:41 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -56,7 +56,8 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`id`, `email`, `phone`, `cin`) VALUES
-(9, 'test@test.com', '098765432', 'h567389');
+(9, 'test@test.com', '098765432', 'h567389'),
+(10, 'lebdaouimeryam1@gmail.com', '087643223456', 'hh789900');
 
 -- --------------------------------------------------------
 
@@ -69,6 +70,17 @@ CREATE TABLE `messages` (
   `message` text NOT NULL,
   `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `message`, `email`) VALUES
+(9, '', ''),
+(10, 'hello', 'lebdaouimeryam1@gmail.com'),
+(11, 'hi', 'salma.kalkhi@gmail.com'),
+(12, 'dcfghbjnkm', 'test@test.com'),
+(13, 'xdcfvgbhnmkl,n bnvb', 'test@test');
 
 -- --------------------------------------------------------
 
@@ -89,6 +101,23 @@ CREATE TABLE `reservation` (
   `prix` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `reservation`
+--
+
+INSERT INTO `reservation` (`id`, `etat`, `first_name`, `last_name`, `email`, `phone`, `cin`, `idUser`, `idVoyage`, `prix`) VALUES
+(13, 1, 'salma', 'salma', 'salma.kalkhi@gmail.com', '3456789', 'h6789', NULL, 2, 160),
+(15, 1, 'fghj', 'hnj', 'test@test', '0668764378', 'hh56789', NULL, 5, 300),
+(16, 1, NULL, NULL, NULL, NULL, NULL, 9, 5, 300),
+(17, 1, NULL, NULL, NULL, NULL, NULL, 9, 5, 500),
+(18, 1, 'ghjk', 'ghjnk', 'vygbh@hfd.com', '34567890', 'hh456789', NULL, 2, 1760),
+(20, 1, NULL, NULL, NULL, NULL, NULL, 10, 2, 320),
+(22, 0, NULL, NULL, NULL, NULL, NULL, 9, 8, 100),
+(23, 1, NULL, NULL, NULL, NULL, NULL, 9, 9, 100),
+(24, 1, NULL, NULL, NULL, NULL, NULL, 9, 9, 100),
+(25, 1, NULL, NULL, NULL, NULL, NULL, 9, 10, 80),
+(26, 1, 'test', 'test', 'test@testtt', '3456789', 'hh538492', NULL, 10, 80);
+
 -- --------------------------------------------------------
 
 --
@@ -107,7 +136,9 @@ CREATE TABLE `train` (
 
 INSERT INTO `train` (`id`, `nom`, `nb_place`) VALUES
 (1, 'Train1', 500),
-(2, 'Train 2', 200);
+(2, 'Train 2', 200),
+(3, 'train 3', 200),
+(4, 'train4', 500);
 
 -- --------------------------------------------------------
 
@@ -129,8 +160,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `first_name`, `last_name`, `username`, `password`, `type`) VALUES
-(1, 'Meryam', 'Lebdaoui', 'meryam', '123456', 'admin'),
-(9, 'test', 'test', 'test', 'test', 'user');
+(1, 'Meryam', 'Lebdaoui', 'meryam1', '12345678', 'admin'),
+(9, 'test', 'test', 'test', 'test12', 'user'),
+(10, 'testt', 'testt', 'testtt', '123456', 'user'),
+(11, '[value-2]', '[value-3]', '[value-4]', '[value-5]', 'admin');
 
 -- --------------------------------------------------------
 
@@ -154,9 +187,12 @@ CREATE TABLE `voyage` (
 --
 
 INSERT INTO `voyage` (`id`, `ville_depart`, `ville_arrive`, `date_depart`, `date_arrive`, `nb_place`, `prix`, `idTrain`) VALUES
-(1, 'Marrakech', 'Casablanca', '2022-03-23 18:29:11', '2022-03-23 21:00:00', 479, 150, 1),
-(2, 'Safi', 'Casablanca', '2022-03-24 17:47:08', '2022-03-27 17:00:00', 400, 160, 2),
-(4, 'Marrakech', 'Rabat', '2022-02-24 17:47:15', '2022-02-15 22:55:38', 1, 200, 2);
+(2, 'Safi', 'Casablanca', '2022-04-27 17:47:08', '2022-04-27 17:00:00', 389, 160, 2),
+(5, 'Casablanca', 'Safi', '2022-04-26 15:11:00', '2022-04-26 18:11:00', 89, 100, 1),
+(8, 'Casablanca', 'Safi', '2022-05-11 22:38:00', '2022-05-11 13:38:00', 99, 100, 3),
+(9, 'Casablanca', 'Marrakech', '2022-05-10 11:55:00', '2022-05-10 14:54:00', 98, 100, 2),
+(10, 'Safi', 'Casablanca', '2022-05-15 09:16:00', '2022-05-15 12:16:00', 98, 80, 2),
+(11, 'Marrakech', 'Rabat', '2022-05-13 15:19:00', '2022-05-13 19:19:00', 500, 200, 4);
 
 --
 -- Indexes for dumped tables
@@ -215,31 +251,31 @@ ALTER TABLE `voyage`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `train`
 --
 ALTER TABLE `train`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `voyage`
 --
 ALTER TABLE `voyage`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

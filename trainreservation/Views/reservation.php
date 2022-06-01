@@ -42,7 +42,7 @@ $voyage = Voyage::getOne($_GET['id']);
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: black;">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: white;">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -136,7 +136,7 @@ $voyage = Voyage::getOne($_GET['id']);
                             </span>
                         </div>
                         <div class="input-group">
-                            <input class="form-control border-radius border-right" value="1" max="<?php echo $voyage->nb_place ?>" type="number" id="nb_place" name="nb_place" placeholder="Number of places">
+                            <input class="form-control border-radius border-right" value="1" min="1" max="<?php echo $voyage->nb_place ?>" type="number" id="nb_place" name="nb_place" placeholder="Number of places">
                             <span class="input-group-addon  border-radius custom-addon">
                                 <i class="ion-ios-telephone"></i>
                             </span>

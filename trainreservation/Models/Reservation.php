@@ -34,6 +34,13 @@ class Reservation{
 		$ctn->insert($this->table,["id", "etat", "idUser", "idVoyage", "prix"],[0, 1, $this->idUser, $this->idVoyage, $this->prix]);
     }
 
+    public static function deleteByVoyage($id){
+        $ctn=new Connection();
+        $conn = $ctn->getConnection();
+        $query = $conn->prepare("DELETE FROM `reservation` WHERE idVoyage=$id");
+		$query->execute();
+    }
+
     public function saveNew(){
         $ctn=new Connection();
 		$ctn->insert($this->table,["id", "etat", "first_name", "last_name", "email", "phone", "cin", "idVoyage", "prix"],

@@ -99,7 +99,7 @@ $trains = Train::getAll();
             Start date:
           </td>
           <td>
-            <input type="datetime-local" name="ddepart">
+            <input type="datetime-local" name="ddepart" min="<?php echo date('Y-m-d') . "T" . date('H:i') ?>" required>
           </td>
         </tr>
 
@@ -108,7 +108,7 @@ $trains = Train::getAll();
             Arrival date:
           </td>
           <td>
-            <input type="datetime-local" class="input" name="darrivee">
+            <input type="datetime-local" class="input" name="darrivee" min="<?php echo date('Y-m-d') . "T" . date('H:i') ?>" required>
           </td>
         </tr>
 
@@ -117,7 +117,7 @@ $trains = Train::getAll();
             Number of places:
           </td>
           <td>
-            <input type="number" class="input" name="nb_place">
+            <input type="number" class="input" name="nb_place" required>
           </td>
         </tr>
 
@@ -126,7 +126,7 @@ $trains = Train::getAll();
             Price:
           </td>
           <td>
-            <input type="number" class="input" name="price">
+            <input type="number" class="input" name="price" required>
           </td>
         </tr>
 
@@ -148,12 +148,24 @@ $trains = Train::getAll();
 
         <tr>
           <td colspan="2">
-            <input class="btn btn-primary" type="submit" name="add" value="Add">
+            <input class="btn btn-primary d-flex justify-content-center m-auto" type="submit" name="add" value="Add">
           </td>
         </tr>
       </table>
     </form>
   </center>
+
+
+
+  <script>
+
+  </script>
+
+
+
+
+
+
 </body>
 
 </html>

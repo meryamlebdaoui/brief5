@@ -1,6 +1,7 @@
 <?php
 
 require_once "Connection.php";
+require_once "User.php";
 
 class Admin {
     public $id;
@@ -17,7 +18,8 @@ class Admin {
     }
 
     public function update(){
-        $user = new User($this->id, $this->first_name, $this->last_name, $this->username, $this->password, "admin");
+        $user = new User($this->first_name, $this->last_name, $this->username, $this->password, "admin");
+        $user->id = $this->id;
         $user->update();
     }
 }
